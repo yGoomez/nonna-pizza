@@ -42,3 +42,5 @@ Dessa forma, o sistema busca proporcionar maior organização, agilidade e efici
 # Design do projeto
 
 - https://www.figma.com/design/9wX7kr6nyFh2MlFwVuc2Cl/Sem-t%C3%ADtulo?node-id=0-1&t=4nQjpJJYstZuaKqs-1
+
+![Começo do MER](/imagens/inicio_MER.png)
