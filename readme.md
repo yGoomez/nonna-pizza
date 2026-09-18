@@ -14,7 +14,6 @@ Dessa forma, o sistema busca proporcionar maior organização, agilidade e efici
 - Consultar o cardápio
 - Realizar pedidos de pizzas
 - Cadastrar e alterar endereço
-- Finalizar pedidos
 - Acompanhar o status do pedido
 - Consultar o histórico de compras
 
@@ -43,9 +42,17 @@ Dessa forma, o sistema busca proporcionar maior organização, agilidade e efici
 
 - https://www.figma.com/design/9wX7kr6nyFh2MlFwVuc2Cl/Sem-t%C3%ADtulo?node-id=0-1&t=4nQjpJJYstZuaKqs-1
 
-![Logo da pizzaria](/imagens/logo.png)
-
 ![Começo do MER](/imagens/inicio_MER.png)
 
 ![MER completo](/imagens/MER_completo.png)
+
+![Login](/imagens/Login.png)
+
+![Cadastro](/imagens/Cadastro.png)
+
+![Comandas](/imagens/ComandaAdm.png)
+
+![CardapioAdm](/imagens/CardapioAdm.png)
+
+![HistoricoAdm](/imagens/HistoricoAdm.png)
 
