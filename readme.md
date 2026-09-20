@@ -44,15 +44,27 @@ Dessa forma, o sistema busca proporcionar maior organização, agilidade e efici
 
 ![Começo do MER](/imagens/inicio_MER.png)
 
-![MER completo](/imagens/MER_completo.png)
+![MER completo](/imagens/MER_completo1.0.png)
 
 ![Login](/imagens/Login.png)
 
 ![Cadastro](/imagens/Cadastro.png)
 
-![Comandas](/imagens/ComandaAdm.png)
+![Comandas](/imagens/Comandas.png)
 
-![CardapioAdm](/imagens/CardapioAdm.png)
+![CardapioAdm](/imagens/Cardápio-ADM.png)
 
-![HistoricoAdm](/imagens/HistoricoAdm.png)
+![HistoricoAdm](/imagens/Pedidos-ADM.png)
+
+![Cardapio](/imagens/nonna_pizzaria_cardapio.png)
+
+![Historico Cliente](/imagens/nonna_pizzaria_historico_pedidos.png)
+
+![Carrinho](/imagens/Resumo_Pedido.png)
+
+![Checkout](/imagens/Total_pedido.png)
+
+![Endereços](/imagens/Enderecos_salvos.png)
+
+![Lading](/imagens/nonna_pizza_landing.png)
 
