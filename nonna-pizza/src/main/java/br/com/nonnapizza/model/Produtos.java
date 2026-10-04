@@ -1,18 +1,19 @@
 package br.com.nonnapizza.model;
 
-public class Pizza {
-    private String sabor;
+public class Produtos {
+
+    private String nome;
     private String tipo;
     private float valor;
     private String descricao;
 
 
-    public String getSabor() {
-        return sabor;
+    public String getNome() {
+        return nome;
     }
 
-    public void setSabor(String sabor) {
-        this.sabor = sabor;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTipo() {

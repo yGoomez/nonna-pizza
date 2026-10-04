@@ -1,6 +1,7 @@
 package br.com.nonnapizza.model;
 
 public class Endereco {
+    private int id;
     private String rua;
     private String cep;
     private String cidade;
@@ -56,4 +57,9 @@ public class Endereco {
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {}
 }
