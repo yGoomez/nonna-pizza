@@ -1,6 +1,9 @@
 package br.com.nonnapizza.serlvet;
 
 
+import br.com.nonnapizza.dao.EnderecoDao;
+import br.com.nonnapizza.model.Endereco;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,15 +11,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/create-pizza")
+@WebServlet("/create-endereco")
 public class CreateNonnaServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String pizzaName = request.getParameter("pizza-name");
+        String ruaNome = request.getParameter("rua");
+        String numero = request.getParameter("numero");
+        String complemento = request.getParameter("complemento");
+        String cep = request.getParameter("cep");
+        String bairro = request.getParameter("bairro");
+        String cidade = request.getParameter("cidade");
 
-        System.out.println(pizzaName);
+        Endereco endereco = new Endereco();
+
+        endereco.setRua(ruaNome);
+        endereco.setNumero(numero);
+        endereco.setComplemento(complemento);
+        endereco.setCep(cep);
+        endereco.setBairro(bairro);
+        endereco.setCidade(cidade);
+
+        EnderecoDao enderecoDao = new EnderecoDao();
+        enderecoDao.criarEndereco(endereco);
 
         request.getRequestDispatcher("index.html").forward(request, response);
 
