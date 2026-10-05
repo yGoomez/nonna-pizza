@@ -1,21 +1,139 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonna Pizza - Painel Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-<h2>Nonna Pizza</h2>
 
-<form action="/create-pizza" method="post">
+<div class="layout">
 
-    <label>Sabor</label>
-    <input type="text" name="sabor" id="sabor">
-    <label>Tipo</label>
-    <input type="text" name="tipo" id="tipo">
-    <label>Valor</label>
-    <input type="text" name="valor" id="valor">
-    <label>Descricao</label>
-    <input type="text" name="descricao" id="descricao">
+    <!-- ===== MENU LATERAL ===== -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>Nonna Pizza</h1>
+            <span>Painel Admin</span>
+        </div>
 
-    <button type="submit">Register</button>
+        <nav class="menu">
+            <a href="index.html" class="ativo">Cardápio</a>
+            <a href="#">Pedidos</a>
+            <a href="#">Produção</a>
+        </nav>
 
-</form>
+        <div class="usuario">
+            <div class="avatar">A</div>
+            <div>
+                <strong>Admin</strong>
+                <a href="#">Sair</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="conteudo">
+
+        <header class="topo">
+            <h2>Gerenciar Cardápio</h2>
+            <a href="#sabor" class="btn btn-primario">+ Novo sabor</a>
+        </header>
+
+        <div class="grade">
+
+            <!-- ===== TABELA DE PIZZAS ===== -->
+            <section class="card tabela-card">
+                <table>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Pizza</th>
+                        <th>Ingredientes</th>
+                        <th>Preço</th>
+                        <th>Disponível</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><img class="pizza-img" src="imagem%20das%20pizzas/Marguerita.png" alt="Marguerita"></td>
+                        <td class="nome">Marguerita</td>
+                        <td class="ingredientes">Molho, mussarela, tomate, manjericão, azeite</td>
+                        <td class="preco">R$ 42,90</td>
+                        <td><label class="switch"><input type="checkbox" checked><span></span></label></td>
+                    </tr>
+                    <tr>
+                        <td><img class="pizza-img" src="imagem%20das%20pizzas/Calabresa-especial.png" alt="Calabresa Especial"></td>
+                        <td class="nome">Calabresa Especial</td>
+                        <td class="ingredientes">Molho, mussarela, calabresa, cebola, azeitona</td>
+                        <td class="preco">R$ 44,90</td>
+                        <td><label class="switch"><input type="checkbox" checked><span></span></label></td>
+                    </tr>
+                    <tr>
+                        <td><img class="pizza-img" src="imagem%20das%20pizzas/Frango-com-Catupiry.png" alt="Frango com Catupiry"></td>
+                        <td class="nome">Frango com Catupiry</td>
+                        <td class="ingredientes">Molho, frango desfiado, catupiry, milho</td>
+                        <td class="preco">R$ 46,90</td>
+                        <td><label class="switch"><input type="checkbox" checked><span></span></label></td>
+                    </tr>
+                    <tr>
+                        <td><img class="pizza-img" src="imagem%20das%20pizzas/portuguesa.png" alt="Portuguesa"></td>
+                        <td class="nome">Portuguesa</td>
+                        <td class="ingredientes">Molho, mussarela, presunto, ovo, cebola, ervilha</td>
+                        <td class="preco">R$ 47,90</td>
+                        <td><label class="switch"><input type="checkbox" checked><span></span></label></td>
+                    </tr>
+                    <tr>
+                        <td><img class="pizza-img" src="imagem%20das%20pizzas/Quatro-queijos.png" alt="Quatro Queijos"></td>
+                        <td class="nome">Quatro Queijos</td>
+                        <td class="ingredientes">Mussarela, provolone, gorgonzola, parmesão</td>
+                        <td class="preco">R$ 49,90</td>
+                        <td><label class="switch"><input type="checkbox" checked><span></span></label></td>
+                    </tr>
+                    <tr>
+                        <td><img class="pizza-img" src="imagem%20das%20pizzas/Quatro-Queijos-Branca-com-Figos-e-Mel.png" alt="Quatro Queijos Branca com Figos e Mel"></td>
+                        <td class="nome">Quatro Queijos Branca com Figos e Mel</td>
+                        <td class="ingredientes">Quatro queijos, figos, mel, nozes</td>
+                        <td class="preco">R$ 54,90</td>
+                        <td><label class="switch"><input type="checkbox"><span></span></label></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== FORMULÁRIO (envia para o CreatePizzaServlet) ===== -->
+            <section class="card painel">
+                <div class="painel-topo">
+                    <h3>Novo sabor</h3>
+                    <span class="tag">Cadastro</span>
+                </div>
+
+                <form action="/create-pizza" method="post">
+                    <label for="sabor">Nome</label>
+                    <input type="text" name="sabor" id="sabor" placeholder="Ex: Quatro Queijos" required>
+
+                    <label for="tipo">Tipo</label>
+                    <input type="text" name="tipo" id="tipo" placeholder="Ex: Salgada" required>
+
+                    <label for="descricao">Ingredientes</label>
+                    <textarea name="descricao" id="descricao" rows="3"
+                              placeholder="Ex: Mussarela, parmesão, catupiry, gorgonzola"></textarea>
+
+                    <label for="valor">Preço</label>
+                    <input type="text" name="valor" id="valor" placeholder="Ex: 49.90" required>
+
+                    <div class="botoes">
+                        <button type="submit" class="btn btn-primario">Salvar</button>
+                        <button type="reset" class="btn btn-secundario">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </main>
+</div>
 
 </body>
 </html>

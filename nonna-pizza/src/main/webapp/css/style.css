@@ -1,0 +1,365 @@
+/* ===== CORES (mude aqui e muda o site todo) ===== */
+:root {
+    --marrom-escuro: #2e1a12;
+    --vinho: #8b1e24;
+    --vinho-hover: #6f171c;
+    --dourado: #f0a830;
+    --laranja: #c97a1e;
+    --fundo: #f8f3ea;
+    --bege: #efe5d4;
+    --bege-campo: #e8dcc4;
+    --borda: #e2d6c1;
+    --texto: #2b1a12;
+    --texto-suave: #7a6a5c;
+}
+
+/* ===== BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== LAYOUT: menu à esquerda + conteúdo ===== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== MENU LATERAL ===== */
+.sidebar {
+    width: 160px;
+    background: var(--marrom-escuro);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.logo {
+    padding: 0 10px;
+    margin-bottom: 60px;
+}
+
+.logo h1 {
+    color: var(--dourado);
+    font-size: 17px;
+}
+
+.logo span {
+    font-size: 10px;
+    color: #a89080;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu a {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #a89080;
+    transition: background 0.2s;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.menu a.ativo {
+    background: var(--vinho);
+    color: white;
+    font-weight: 600;
+}
+
+.usuario {
+    margin-top: auto; /* empurra para o fundo */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.usuario .avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #5a4436;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.usuario strong {
+    display: block;
+    color: #c8b8a8;
+}
+
+.usuario a {
+    color: #8a7666;
+}
+
+/* ===== CONTEÚDO ===== */
+.conteudo {
+    flex: 1;
+    padding: 25px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.topo h2 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* Tabela à esquerda, formulário à direita */
+.grade {
+    display: grid;
+    grid-template-columns: 1fr 205px;
+    gap: 18px;
+    align-items: start;
+}
+
+.card {
+    background: var(--bege);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 6px;
+    border: none;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primario {
+    background: var(--vinho);
+    color: white;
+}
+
+.btn-primario:hover {
+    background: var(--vinho-hover);
+}
+
+.btn-secundario {
+    background: var(--bege-campo);
+    color: var(--texto-suave);
+    border: 1px solid var(--borda);
+    font-weight: 400;
+}
+
+/* ===== TABELA ===== */
+.tabela-card {
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--texto-suave);
+    padding: 10px 12px;
+}
+
+td {
+    padding: 12px;
+    border-top: 1px solid var(--borda);
+    vertical-align: middle;
+}
+
+.pizza-icone {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--marrom-escuro);
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+}
+
+.nome {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ingredientes {
+    font-size: 10px;
+    color: var(--texto-suave);
+}
+
+.preco {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ===== BOTÃO LIGA/DESLIGA (switch) ===== */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+}
+
+.switch input {
+    display: none; /* esconde o checkbox original */
+}
+
+.switch span {
+    position: absolute;
+    inset: 0;
+    background: var(--bege-campo);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.switch span::before { /* a bolinha */
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    left: 2px;
+    top: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.switch input:checked + span {
+    background: var(--vinho);
+}
+
+.switch input:checked + span::before {
+    transform: translateX(15px);
+}
+
+/* ===== PAINEL DO FORMULÁRIO ===== */
+.painel {
+    border: 2px solid var(--vinho);
+    padding: 16px;
+}
+
+.painel-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.painel-topo h3 {
+    font-size: 14px;
+}
+
+.tag {
+    background: var(--laranja);
+    color: white;
+    font-size: 8px;
+    padding: 3px 7px;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    margin: 10px 0 4px;
+}
+
+form input,
+form textarea {
+    background: var(--bege-campo);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 11px;
+    color: var(--texto);
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid var(--vinho);
+}
+
+.botoes {
+    display: flex;
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.botoes .btn-primario {
+    flex: 1;
+}
+
+/* ===== CELULAR: empilha tudo ===== */
+@media (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .usuario {
+        display: none;
+    }
+
+    .grade {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pizza-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; /* corta a foto sem achatar */
+    display: block;
+}
